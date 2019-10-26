@@ -21,7 +21,7 @@ router.route("/").post(schemaValidator(schema), async (req, res, next) => {
         }
     });
 
-router.route("/:id").get((req, res, next) => {
+router.route("/:id").get(async (req, res, next) => {
     try {
         let vendedor = await new vendedorService().getOne(req.params.id);
         if (!vendedor) return res.status(400).json({ message: "vendedor no encontrado" });
@@ -30,7 +30,7 @@ router.route("/:id").get((req, res, next) => {
         next(err);
     }
 })
-    .put((req, res, next) => {
+    .put(async (req, res, next) => {
         try {
             await new vendedorService().update(req.params.id, req.body);
             res.status(200).json({ message: "updated successfully" });
@@ -38,7 +38,7 @@ router.route("/:id").get((req, res, next) => {
             next(err);
         }
     })
-    .delete((req, res, next) => {
+    .delete(async (req, res, next) => {
         try {
             await new vendedorService().delete(req.params.id);
             res.status(200).json({ message: "deleted successfully" });

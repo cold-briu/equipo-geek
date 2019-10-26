@@ -64,7 +64,7 @@ module.exports = class MongoLib {
             .then(db => {
                 return db
                     .collection(collection)
-                    .findOneAndUpdate(
+                    .updateOne(
                         { _id: ObjectId(id) },
                         { $set: data },
                         { upsert: true }
@@ -78,7 +78,7 @@ module.exports = class MongoLib {
             .then(db => {
                 return db
                     .collection(collection)
-                    .findOneAndDelete({ _id: ObjectId(id) });
+                    .deleteOne({ _id: ObjectId(id) });
             })
             .then(() => id);
     }
@@ -87,5 +87,9 @@ module.exports = class MongoLib {
         return this.connect().then(db =>
             db.collection(collection).findOne({ email })
         );
+    }
+
+    updateContrato(collection, find, data) {
+        return this.connect().then(db => db.collection(collection).updateOne(find, data, { upsert: true }));
     }
 }

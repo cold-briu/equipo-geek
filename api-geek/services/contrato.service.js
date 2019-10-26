@@ -27,8 +27,8 @@ class ContratoServices {
         return user;
     }
 
-    async update(userid, data) {
-        const user = await this.MongoDB.update(this.collection, userid, data);
+    async update(find, data) {
+        const user = await this.MongoDB.updateContrato(this.collection, find, data);
         return user;
     }
 
