@@ -5,6 +5,9 @@ const { port } = require("./config/config");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "10mb" }));
 
+app.use("/api/usuarios", require("./routes/users.route"));
+app.use("/api/vendedores", require("./routes/vendedor.route"));
+
 // Start the server
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
