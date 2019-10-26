@@ -1,0 +1,19 @@
+{
+  "name": "api-geek",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon -q app.js"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
