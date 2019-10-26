@@ -4,13 +4,13 @@ function validateUser(data) {
     const Schema = joi.object({
         name: joi.string().required().min(2),
         email: joi.string().email().required(),
-        password: joi.string().min(6).max(255),
         phone: joi.string().required(),
         document: joi.string().required(),
+        expedido: joi.required(),
+        ciudadExpedido: joi.string().required(),
         birthday: joi.required(),
-        city: joi.string().required(),
         genere: joi.string()
-    });
+    }).unknown(true);
 
     return Schema.validate(data);
 }
