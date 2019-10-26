@@ -1,4 +1,4 @@
-const MongoLib = require("../lib/mongo");
+const MongoLib = require("../lib/mongodb");
 
 class UserServices {
 
@@ -8,6 +8,7 @@ class UserServices {
     }
 
     async register(data) {
+        data.status = 0;
         const user = await this.MongoDB.create(this.collection, data);
         return user;
     }

@@ -1,3 +1,5 @@
+const MongoLib = require("../lib/mongodb");
+
 class VendedorService {
     constructor() {
         this.MongoDB = new MongoLib();
@@ -34,3 +36,5 @@ class VendedorService {
         return user;
     }
 }
+
+module.exports = VendedorService;

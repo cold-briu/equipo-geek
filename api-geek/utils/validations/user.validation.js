@@ -5,13 +5,13 @@ function validateUser(data) {
         name: joi.string().required().min(2).max(60),
         lastname: joi.string().required().min(5).max(60),
         email: joi.string().email().required(),
-        password: joi.string().min(6).max(20),
+        password: joi.string().min(6).max(255),
         phone: joi.string().required(),
         document: joi.string().required(),
-        birthday: joi.required().integer()
+        birthday: joi.required()
     });
 
-    return Schema;
+    return Schema.validate(data);
 }
 
-module.exports = { validateUser }
+module.exports = validateUser 

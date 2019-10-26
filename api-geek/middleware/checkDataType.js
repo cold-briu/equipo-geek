@@ -1,4 +1,4 @@
-function checkDataTypes(schemaValidator) {
+module.exports = function (schemaValidator) {
     return (req, res, next) => {
         try {
             const { error } = schemaValidator(req.body);
@@ -13,5 +13,3 @@ function checkDataTypes(schemaValidator) {
         }
     };
 }
-
-module.exports = checkDataTypes;
