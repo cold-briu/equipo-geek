@@ -4,6 +4,20 @@ import { Link } from "react-router-dom";
 class Registro_cliente extends React.Component{
     constructor(props){
         super(props);
+        
+		this.state = {
+			name: '',
+			email: '',
+			password: '',
+			phone: '',
+			document: '',
+			birthday: '',
+			city: '',
+			genere: ''
+		};
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+
     }
     render(){
         return(
@@ -16,25 +30,25 @@ class Registro_cliente extends React.Component{
                                 <div className="form-group row">
                                     <div className="col-12">
                                         <h6>Nombre Completo</h6>
-                                        <input type="text" placeholder="Nombre Completo"/> 
+                                        <input type="text" value={this.state.name} name="name" onChange={this.handleChange} placeholder="Nombre Completo"/> 
                                     </div>
                                 </div>
                                 <div className="form-group row">
                                     <div className="col-12">
                                         <h6>Numero de Documento</h6>
-                                        <input type="number" placeholder="Numero de Documento"/>
+                                        <input type="number" value={this.state.document} name="document" onChange={this.handleChange}  placeholder="Numero de Documento"/>
                                     </div>
                                 </div>
                                 <div className="form-group row">
                                     <div className="col-12">
                                         <h6>Fecha de Nacimiento</h6>
-                                        <input type="date" placeholder="Fecha de Nacimiento"/>
+                                        <input type="date" value={this.state.birthday} name="birthday" onChange={this.handleChange}  placeholder="Fecha de Nacimiento"/>
                                     </div>
                                 </div>
                                 <div className="form-group row">
                                     <div className="col-12">
                                         <h6>Genero</h6>
-                                        <select name="" id="">
+                                        <select name="" value={this.state.birthday} name="birthday" onChange={this.handleChange} id="">
                                             <option value="Hombre">Hombre</option>
                                             <option value="Mujer">Mujer</option>
                                         </select>
