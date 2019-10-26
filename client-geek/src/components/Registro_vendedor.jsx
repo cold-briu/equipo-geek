@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import vendedorService from '../services/vendedor.service';
 
 class Registro_vendedor extends React.Component {
 	constructor(props) {
@@ -39,6 +40,7 @@ class Registro_vendedor extends React.Component {
 					<div className='row'>
 						<div className='col-7 mx-auto mt-5 d-flex align-items-center justify-content-center flex-column'>
 							<h3>REGISTRO</h3>
+							<button onClick={vendedorService.register}>test</button>
 							<form
 								action=''
 								onSubmit={this.handleSubmit}

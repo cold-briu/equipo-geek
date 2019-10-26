@@ -9,6 +9,10 @@ import registrarVendedor from './pages/registrarVendedor';
 import loginVendedor from './pages/loginVendedor';
 import home from './pages/home';
 
+import crearContrato from './pages/crearContrato';
+import registrarCliente from './pages/registrarCliente';
+import misClientes from './pages/misClientes';
+
 function App() {
 	return (
 		<BrowserRouter>
@@ -19,6 +23,9 @@ function App() {
 				<Route exact path='/registro' component={registrarVendedor} />
 				<Route exact path='/login' component={loginVendedor} />
 				<Route exact path='/home' component={home} />
+				<Route exact path='/crear-contrato' component={crearContrato} />
+				<Route exact path='/registrar-cliente' component={registrarCliente} />
+				<Route exact path='/misClientes' component={misClientes} />
 			</Switch>
 		</BrowserRouter>
 	);

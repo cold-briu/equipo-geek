@@ -85,7 +85,7 @@ module.exports = class MongoLib {
 
     login(collection, email) {
         return this.connect().then(db =>
-            db.collection(collection).findOne({ email: email })
+            db.collection(collection).findOne({ email })
         );
     }
 }

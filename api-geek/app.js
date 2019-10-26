@@ -4,9 +4,11 @@ const { port } = require('./config/config');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: '10mb' }));
+app.use(require('cors'));
 
-app.use("/api/usuarios", require("./routes/users.route"));
-app.use("/api/vendedores", require("./routes/vendedor.route"));
+app.use('/api', require('./routes/login.route'));
+app.use('/api/usuarios', require('./routes/users.route'));
+app.use('/api/vendedores', require('./routes/vendedor.route'));
 
 // Start the server
 app.listen(port, () => {

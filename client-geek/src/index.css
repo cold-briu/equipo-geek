@@ -12,3 +12,8 @@ body {
 .d-none {
 	display: none;
 }
+
+.full-container {
+	height: 100%;
+	width: 100%;
+}

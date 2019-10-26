@@ -2,7 +2,7 @@ function vendedorAuth() {
 	let vendedorIsAuth = false;
 	let vendedorId = '';
 	let vendedorData = '';
-	const mainUrl = 'https://aka-geek.appspot.com';
+	const mainUrl = 'https://equipo-geek.appspot.com';
 
 	this.getAuth = function() {
 		return vendedorIsAuth;
@@ -12,11 +12,13 @@ function vendedorAuth() {
 		return vendedorId;
 	};
 
-	this.setAuth = async function(data) {
+	this.setAuth = async function(/*data*/) {
 		try {
-			const url = `${mainUrl}/api/usuarios/login`;
+			let data = {};
+			const url = `${mainUrl}/api/vendedores`;
 			const response = await fetch(url, {
 				method: 'POST',
+				cors: 'no-cors',
 				cache: 'no-cache',
 				credentials: 'same-origin',
 				headers: { 'Content-Type': 'application/json' },
@@ -35,8 +37,18 @@ function vendedorAuth() {
 		}
 	};
 
-	this.register = async function(vendedor) {
+	this.register = async function(/*vendedor*/) {
 		try {
+			let vendedor = {
+				name: 'alex okendo',
+				email: 'alex@okendo.com',
+				password: 'asd123',
+				phone: 123345365,
+				document: '123123123123',
+				birthday: '132/11/123123',
+				city: 'medellinu',
+				genere: 'hola'
+			};
 			let response = await fetch(`${mainUrl}/api/usuarios`, {
 				method: 'POST',
 				body: JSON.stringify(vendedor), // data can be `string` or {object}!
