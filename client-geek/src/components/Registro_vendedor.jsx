@@ -29,7 +29,6 @@ class Registro_vendedor extends React.Component {
 		const data = new FormData(e.target);
 		console.log(e.target);
 		console.log(data);
-
 		document.querySelector('#register-redirect').click();
 	}
 	render() {
@@ -44,14 +43,16 @@ class Registro_vendedor extends React.Component {
 								onSubmit={this.handleSubmit}
 								className='justify-content-center w-100'
 							>
-								<input
-									className='form-control'
-									type='text'
-									placeholder='Nombre Completo'
-								/>
 								<div className='form-group '>
 									<div className='col-12'>
 										<h6>Nombre Completo</h6>
+										<input
+											className='form-control'
+											name="name"
+											type='text'
+											value={this.state.name}
+											onChange={this.handleChange}
+											placeholder='Nombre Completo'/>
 									</div>
 								</div>
 								<div className='form-group '>
@@ -59,7 +60,10 @@ class Registro_vendedor extends React.Component {
 										<h6>Numero de Documento</h6>
 										<input
 											className='form-control'
+											name="document"
 											type='number'
+											value={this.state.document}
+											onChange={this.handleChange}
 											placeholder='Numero de Documento'
 										/>
 									</div>
@@ -70,6 +74,9 @@ class Registro_vendedor extends React.Component {
 										<input
 											className='form-control'
 											type='text'
+											name="city"
+											value={this.state.city}
+											onChange={this.handleChange}
 											placeholder='lugar expedicion'
 										/>
 									</div>
@@ -80,6 +87,9 @@ class Registro_vendedor extends React.Component {
 										<input
 											className='form-control'
 											type='date'
+											name="birthday"
+											value={this.state.birthday}	
+											onChange={this.handleChange}
 											placeholder='Fecha de Nacimiento'
 										/>
 									</div>
@@ -87,7 +97,7 @@ class Registro_vendedor extends React.Component {
 								<div className='form-group '>
 									<div className='col-12'>
 										<h6>Genero</h6>
-										<select name='' id=''>
+										<select name='' id='' name="genere" value={this.state.genere} onChange={this.handleChange}>
 											<option value='Hombre'>Hombre</option>
 											<option value='Mujer'>Mujer</option>
 										</select>
@@ -99,6 +109,9 @@ class Registro_vendedor extends React.Component {
 										<input
 											className='form-control'
 											type='text'
+											name="email"
+											value={this.state.email}
+											onChange={this.handleChange}
 											placeholder='Correo Electronico'
 										/>
 									</div>
@@ -109,6 +122,9 @@ class Registro_vendedor extends React.Component {
 										<input
 											className='form-control'
 											type='number'
+											name="phone"
+											value={this.state.phone}
+											onChange={this.handleChange}
 											placeholder='Numero de Celular'
 										/>
 									</div>
