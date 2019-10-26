@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import Login from '../components/Login';
 
 class loginVendedor extends Component {
 	state = {};
 	render() {
-		return <h1>hola</h1>;
+		return <Login />;
 	}
 }
 
