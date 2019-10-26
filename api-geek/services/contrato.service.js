@@ -16,6 +16,8 @@ class ContratoServices {
     }
 
     async getAll(query) {
+        if (query.vendedor) ObjectId(query.vendedor);
+        if (query.cliente) ObjectId(query.cliente);
         const users = await this.MongoDB.getAll(this.collection, query);
         return users || ["not found"];
     }
